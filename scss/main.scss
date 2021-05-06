@@ -1,0 +1,97 @@
+body {
+    user-select: none;
+}
+
+div {
+    max-width: 500px;
+    margin: 100px auto;
+}
+
+// Radio/Checkbox btn
+.form-control {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &__input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+
+   // Maxsus radio/checbox button ga style berish 
+    &__custom-radio, &__custom-checkbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 24px;
+        width: 24px;
+        background-color: #ddd;
+    }
+
+     &__custom-radio {
+        border-radius: 50%;
+    }
+
+
+    // Sichqoncha olib borilganda orqa fon rangini o'zgartirish
+    &:hover &__custom-radio {
+        background-color: #ccc;
+    }
+
+
+
+    // Radio button tanlanganda, unning orqa fon rangini o'zgartirish
+    &__input:checked ~ &__custom-radio {
+        background-color: #2D6A4F;
+    }
+
+    // Checked button tanlanganda, unning orqa fon rangini o'zgartirish
+    &__input:checked ~ &__custom-checkbox {
+        background-color: #2D6A4F;
+    }
+
+
+
+    // Radio button tanlanganligini bildiruvchi belgi yaratish
+    &__custom-radio::after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: none;
+    }
+
+      // Checkbox button tanlanganligini bildiruvchi belgi yaratish
+    &__custom-checkbox::after {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 4px;
+        width: 5px;
+        height: 10px;
+        border: solid #fff;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+        display: none;
+    }
+
+
+
+    // Tanlangan paytda belgini ko'rsatish 
+    &__input:checked ~ &__custom-radio::after{
+         display: block;
+        }
+
+    &__input:checked ~ &__custom-checkbox::after {
+        display: block;
+    }
+}

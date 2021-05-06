@@ -1,0 +1,74 @@
+body {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+div {
+  max-width: 500px;
+  margin: 100px auto;
+}
+
+.form-control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.form-control__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.form-control__custom-radio, .form-control__custom-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #ddd;
+}
+.form-control__custom-radio {
+  border-radius: 50%;
+}
+.form-control:hover .form-control__custom-radio {
+  background-color: #ccc;
+}
+.form-control__input:checked ~ .form-control__custom-radio {
+  background-color: #2D6A4F;
+}
+.form-control__input:checked ~ .form-control__custom-checkbox {
+  background-color: #2D6A4F;
+}
+.form-control__custom-radio::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: none;
+}
+.form-control__custom-checkbox::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+.form-control__input:checked ~ .form-control__custom-radio::after {
+  display: block;
+}
+.form-control__input:checked ~ .form-control__custom-checkbox::after {
+  display: block;
+}/*# sourceMappingURL=main.css.map */
